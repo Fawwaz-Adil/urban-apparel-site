@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Apparel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <script src="favicon.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <i class="fas fa-bars" onclick="toggleMenu()"></i>
+            <span>Menu</span>
+            <div class="menu-content" id="menuContent">
+                <a href="index.html">Home</a>
+                <a href="#products">Our Products</a>
+                <a href="#contact-form">Contact Us</a>
+                <a href="checkout.html">Checkout</a>
+            </div>
+        </div>
+        <div class="title"><a href="index.html" style="color: inherit; text-decoration: none;">Urban Apparel</a></div>
+        <div class="cart-container">
+            <div class="cart" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+                <div id="cartDropdown" class="cart-dropdown">
+                    <h3>Shopping Cart</h3>
+                    <ul id="cartItemsList">
+                        <li>No items in cart</li>
+                    </ul>
+                    <button id="checkoutBtn"><a href="checkout.html"  style=" color: inherit; text-decoration: none;" >Checkout</a></button>
+                    <button id="clearCartButton">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="carousel" id="carousel">
+            <img alt="banner1" class="active" height="300" src="./images/banner/c9055ea7-fdcf-4835-a130-723dd2aaf525.png" width="800"/>
+            <img alt="banner2" class="hidden" height="300" src="./images/banner/cool-guy-having-fun-vacation-wearing-straw-hat-sunglasses-looking-aside-sassy-standing-blu.jpg" width="800"/>
+            <img alt="banner3" class="hidden" height="300" src="./images/banner/portrait-tourist-takesoff-sunglasses-saying-wow-staring-impressed-camera-checking-out-cool.jpg" width="800"/>
+        </div>
+
+        <!-- Product Sections -->
+        <div class="products" id="products">
+            <h2>Our Products</h2>
+            <!-- To make filtering easy, add buttons to navigate between categories: -->
+            <div class="category-filters">
+                <button onclick="showCategory('shirts')">Shirts</button>
+                <button onclick="showCategory('pants')">Pants</button>
+                <button onclick="showCategory('hoodies')">Hoodies</button>
+                <!-- Show All Button -->
+                <button onclick="showAllCategories()">Show All</button>
+            </div>
+            <!-- Shirts Section -->
+            <h3>Shirts</h3>
+            <div class="product-list" id="productListShirts">
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="White Shirt" data-price="19.99">
+                            <img src="./images/shirts/white shirt.png" alt="White Shirt"/>
+                            <h4>White Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Denim Shirt" data-price="24.99">
+                            <img src="./images/shirts/denim blue shirt.png" alt="Blue Denim Shirt"/>
+                            <h4>Blue Denim Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Bage Checkers Shirt" data-price="24.99">
+                            <img src="./images/shirts/bage checkers shirt.png" alt="Bage Checkers Shirt"/>
+                            <h4>Bage Checkers Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Shirt" data-price="24.99">
+                            <img src="./images/shirts/black shirt.png" alt="Black Shirt"/>
+                            <h4>Black Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Woven Shirt" data-price="24.99">
+                            <img src="./images/shirts/blue woven shirt.png" alt="Blue Woven Shirt"/>
+                            <h4>Blue Woven Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Brown Shirt" data-price="19.99">
+                            <img src="./images/shirts/brown shirt.png" alt="Brown Shirt"/>
+                            <h4>Brown Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Red Shirt" data-price="19.99">
+                            <img src="./images/shirts/red shirt.png" alt="Red Shirt"/>
+                            <h4>Red Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Valvet Black Shirt" data-price="19.99">
+                            <img src="./images/shirts/valvet black shirt.png" alt="Valvet Black Shirt"/>
+                            <h4>Valvet Black Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <button class="scroll-btn right-btn">→</button>
+                </div>
+            </div>
+
+            <!-- Pants Section -->
+            <h3>Pants</h3>
+            <div class="product-list" id="productListPants">
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="Black Baggy Jean" data-price="39.99">
+                            <img src="./images/pants/black baggy jean.png" alt="Black Baggy Jean"/>
+                            <h4>Black Baggy Jean</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Fit Jean" data-price="29.99">
+                            <img src="./images/pants/black fit jean.png" alt="Black Fit Jean"/>
+                            <h4>Black Fit Jean</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Cargo Blue Jean" data-price="39.99">
+                            <img src="./images/pants/cargo blue jean.png" alt="Cargo Blue Jean"/>
+                            <h4>Cargo Blue Jean</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Denim Jean" data-price="29.99">
+                            <img src="./images/pants/denim jean.png" alt="Denim Jean"/>
+                            <h4>Denim Jean</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Double Knee Jean" data-price="39.99">
+                            <img src="./images/pants/double knee jean.png" alt="Double Knee Jean"/>
+                            <h4>Double Knee Jean</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Jean" data-price="29.99">
+                            <img src="./images/pants/jeans.png" alt="Jean"/>
+                            <h4>Jean</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Khakis" data-price="39.99">
+                            <img src="./images/pants/khakis.png" alt="Khakis"/>
+                            <h4>Khakis</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Brown Baggy Jean" data-price="29.99">
+                            <img src="./images/pants/brown baggy jean.png" alt="Brown Baggy Jean"/>
+                            <h4>Brown Baggy Jean</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <button class="scroll-btn right-btn">→</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hoodies Section -->
+            <h3>Hoodies</h3>
+            <div class="product-list" id="productListHoodies">
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="Black Pullover" data-price="44.99">
+                            <img src="./images/hoodies/black pullover.png" alt="Black Pullover"/>
+                            <h4>Black Pullover</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/grey hoodie.png" alt="Grey Hoodie"/>
+                            <h4>Grey Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Graphic Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/blck graphic hoodie.png" alt="Black Graphic Hoodie"/>
+                            <h4>Black Graphic Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Embroidered Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/embroidered hoodie.png" alt="Embroidered Hoodie"/>
+                            <h4>Embroidered Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Green Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/kitty green hoodie.png" alt="Green Hoodie"/>
+                            <h4>Green Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Printed Blue Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/printed blue hoodie.png" alt="Printed Blue Hoodie"/>
+                            <h4>Printed Blue Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Thanks A Bunch Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/thanks a bunch blue hoodie.png" alt="Thanks A Bunch Hoodie"/>
+                            <h4>Thanks A Bunch Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Yellow Hoodie" data-price="44.99">
+                            <img src="./images/hoodies/Yellow hoodie.png" alt="Yellow Hoodie"/>
+                            <h4>Yellow Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <button class="scroll-btn right-btn">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" id="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input placeholder="Name" type="text" required class="form-input"/>
+                </div>
+                <div class="form-group">
+                    <input placeholder="Email" type="email" required class="form-input"/>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message" rows="5" required class="form-textarea"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 Urban Apparel. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
